@@ -16,7 +16,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ag memory-usage minimap projectile writeroom-mode visual-fill-column darkroom counsel-ebdb magithub magit flymd markdown-mode))))
+    (dashboard ag memory-usage minimap projectile writeroom-mode visual-fill-column darkroom counsel-ebdb magithub magit flymd markdown-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,3 +44,9 @@
       version-control t      ; Use version numbers on backups,
       kept-new-versions 50   ; keep some new versions
       kept-old-versions 2)   ; and some old ones, too
+
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-items '((projects . 10)
+			(recents  . 10)
+                        (bookmarks . 10)))
